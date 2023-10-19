@@ -22,4 +22,4 @@ _How to connect to SonarQube:_
 
 
 **Current developments:**
-. **SonarQube** and **Jenkins** were successfully installed and working on the test environment
+**SonarQube** and **Jenkins** were successfully installed and working on the test environment
