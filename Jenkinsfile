@@ -4,21 +4,21 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout your source code from version control
+                // Check the git repo
                 git 'https://github.com/bfellows71/DevOpsSE1.git'
             }
         }
 
         stage('Build') {
             steps {
-                // Build your project
+                // build it
                 sh 'mvn clean install'
             }
         }
 
         stage('PMD Analysis') {
             steps {
-                // Run PMD analysis
+                // run the PMD tool 
                 recordIssues(
                     tools: [pmd(pattern: 'target/pmd.xml')] // Adjust the pattern based on your PMD output location
                 )
@@ -27,14 +27,14 @@ pipeline {
 
         stage('Test') {
             steps {
-                // Run your tests
+                // tests
                 sh 'mvn test'
             }
         }
 
         stage('Deploy') {
             steps {
-                // Deploy your application (if applicable)
+                // if it passes, lets deploy it wherever
             }
         }
     }
